@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% block content %} {% for element in elements %}
+<!--prettierignore-->
+<div>
+  <span> <{{ element.title }}</span>
+  <span>{{ element.content }}</span>
+  {{element.date}}
+</div>
+{% endfor %} {% endblock %}
