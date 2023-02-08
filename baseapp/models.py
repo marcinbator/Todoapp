@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+
+class Element(models.Model):
+    title = models.CharField(("Tytuł"), max_length=50)
+    content = models.TextField(("Zawartość"))
+    date = models.DateTimeField(
+        ("Data dodania"), auto_now_add=True)
