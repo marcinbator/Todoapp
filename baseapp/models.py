@@ -6,3 +6,6 @@ class Element(models.Model):
     content = models.TextField(("Zawartość"))
     date = models.DateTimeField(
         ("Data dodania"), auto_now_add=True)
+
+    def __str__(self):
+        return self.title

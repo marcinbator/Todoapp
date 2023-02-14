@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+<!--pretierignore-->
+<div>
+  <form action="" method="POST">
+    {% for field in form %} {% csrf_token %} {{field}} {{field.label}}
+    <!--pretierignore-->
+    {% endfor %}
+    <input href="home/" type="submit" />
+  </form>
+</div>
+{% endblock %}
