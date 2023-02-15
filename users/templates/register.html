@@ -1,0 +1,9 @@
+xd
+<form method="POST" action="">
+  <!--prettierignore-->
+  {% for field in form %} {% csrf_token %}{{field}} {{field.label}}
+  <!--prettierignore-->
+
+  {% endfor%}
+  <input type="submit" />
+</form>

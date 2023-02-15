@@ -1,9 +1,13 @@
-xd
-<form method="POST" action="">
-  <!--prettierignore-->
-  {% for field in form %} {% csrf_token %}{{field}} {{field.label}}
-  <!--prettierignore-->
+{% extends 'base.html' %} {% block content %}
+<div>
+  Siemano, {% if user.is_authenticated %} {{ user }} {% else %} durniu
+  niezalogowany. {% endif %} {% if user.is_authenticated %}
+  <a href="logout/">Wyloguj</a>
+  {% else %}
+  <a href="login/">Zaloguj się</a>
+  <a href="register">Utwórz konto</a>
 
-  {% endfor%}
-  <input type="submit" />
-</form>
+  {% endif %}
+  <a href="{% url 'home' %}">Strona główna</a>
+</div>
+{% endblock %}

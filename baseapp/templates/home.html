@@ -10,4 +10,8 @@
 </div>
 {% endfor %}
 <a href="dodaj/">Dodaj</a>
-{% endblock %}
+<!--prettierignore-->
+{% if messages %} {% for message in messages %} {{message}} {% endfor %}
+
+<!--prettierignore-->
+{% endif %}<a href="/users">Konto</a> {% endblock %}
