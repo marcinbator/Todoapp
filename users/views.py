@@ -14,7 +14,7 @@ def register(request):
         form = CreateUserForm(request.POST)
         if form.is_valid:
             form.save()
-            return redirect('dash')
+            return redirect('users:dash')
         else:
             messages.error(request, 'Chyba nie bardzo.')
             return redirect('register')
@@ -29,7 +29,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('dash')
+            return redirect('users:dash')
         else:
             return redirect('login')
     else:
