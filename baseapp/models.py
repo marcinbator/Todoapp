@@ -7,7 +7,7 @@ class Element(models.Model):
     content = models.TextField(("Zawartość"))
     date = models.DateTimeField(
         ("Data dodania"), auto_now_add=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
 
     def __str__(self):
         return self.title

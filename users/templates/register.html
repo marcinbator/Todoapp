@@ -1,4 +1,4 @@
-xd
+{% for message in messages %} {{message}} {% endfor %}
 <form method="POST" action="">
   <!--prettierignore-->
   {% for field in form %} {% csrf_token %}{{field}} {{field.label}}

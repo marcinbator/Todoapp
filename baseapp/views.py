@@ -6,14 +6,18 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 
-@login_required
 def home(request):
+    if request.user.is_authenticated:
+        elements = Element.objects.filter(author=request.user)
+    else:
+        elements = []
     context = {
-        'elements': Element.objects.filter(author=request.user)
+        'elements': elements
     }
     return render(request, 'home.html', context)
 
 
+@login_required
 def dodaj(request):
     form = addElement()
     if request.method == 'POST':
@@ -29,6 +33,7 @@ def dodaj(request):
     return render(request, 'addElement.html', context)
 
 
+@login_required
 def usun(request, id):
     Element.objects.get(id=id).delete()
     return HttpResponseRedirect(reverse('home'))
