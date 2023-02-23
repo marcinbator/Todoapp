@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -27,12 +26,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "*",
-<<<<<<< HEAD
     'cb1a0754-b29b-4fef-a985-935aff18927d.id.repl.co',
-=======
->>>>>>> parent of 11f78d3f (replit deploy)
 ]
-
 
 # Application definition
 
@@ -77,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'todoapp.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -88,33 +82,21 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-<<<<<<< HEAD
         'NAME':
         'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-=======
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
->>>>>>> parent of 11f78d3f (replit deploy)
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-<<<<<<< HEAD
-=======
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
->>>>>>> parent of 11f78d3f (replit deploy)
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -123,11 +105,9 @@ LANGUAGE_CODE = 'pl-pl'
 
 TIME_ZONE = 'Europe/Warsaw'
 
-
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -140,7 +120,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'users/login'
-<<<<<<< HEAD
 
 X_FRAME_OPTIONS = '*'
 
@@ -151,5 +130,3 @@ CSRF_COOKIE_SECURE = False
 CSRF_COOKIE_HTTPONLY = False
 
 SESSION_COOKIE_SECURE = False
-=======
->>>>>>> parent of 11f78d3f (replit deploy)
