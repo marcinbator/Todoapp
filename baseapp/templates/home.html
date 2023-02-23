@@ -16,7 +16,7 @@
   {% endif %}
 </div>
 {% endfor %} {% if user.is_authenticated %}
-<a href="/add/">Dodaj notatkę</a>
+<a href="/add/">Dodaj</a>
 <a href="/users/">Konto</a>
 {% else %}
 <p>Aby dodać elementy, <a href="{% url 'users:login' %}">zaloguj się</a>.</p>
