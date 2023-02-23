@@ -1,7 +1,8 @@
 <div class='nav'>
-    <h1>TODOApp</h1>
+    <a class=title href="{% url 'home' %}"><h1>TODOApp</h1></a>
+    <span class='subtitle'>PODRĘCZNA LISTA ZADAŃ</span>
 </div>
 <div class='menu'>
-    <a class='menu-element' href="{% url 'users:dash' %}">Konto</a>
     <a class='menu-element' href="{% url 'home' %}">Strona główna</a>
+    <a class='menu-element' href="{% url 'users:dash' %}">Konto</a>
 </div>
