@@ -12,13 +12,14 @@ def dashboard(request):
   return render(request, 'dashboard.html')
 
 
+@csrf_exempt
 def register(request):
   form = CreateUserForm()
   if request.method == 'POST':
     form = CreateUserForm(request.POST)
     if form.is_valid():
       form.save()
-      return redirect('home')
+      return redirect('users:dash')
     else:
       for field, errors in form.errors.items():
         for error in errors:
