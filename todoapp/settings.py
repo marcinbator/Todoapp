@@ -159,6 +159,7 @@ CSRF_COOKIE_SECURE = False
 CSRF_COOKIE_HTTPONLY = False
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 SESSION_COOKIE_SECURE = False
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -182,3 +183,6 @@ AUTH_PASSWORD_VALIDATORS = [
 >>>>>>> parent of 3729a669 (g)
 =======
 >>>>>>> parent of 3729a669 (g)
+=======
+SESSION_COOKIE_SECURE = False
+>>>>>>> parent of 55bf3a73 (Merge branch 'main' of https://github.com/HeilMartinos/Todoapp)
