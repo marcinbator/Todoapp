@@ -131,17 +131,3 @@ CSRF_COOKIE_SECURE = False
 CSRF_COOKIE_HTTPONLY = False
 
 SESSION_COOKIE_SECURE = False
-
-AUTH_PASSWORD_VALIDATORS = [
-    {  # This validates against the username
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {  # This validates the length
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
-SESSION_COOKIE_SECURE = False
