@@ -19,7 +19,7 @@ def register(request):
     form = CreateUserForm(request.POST)
     if form.is_valid():
       form.save()
-      return redirect('users:dash')
+      return redirect('home')
     else:
       for field, errors in form.errors.items():
         for error in errors:
@@ -41,7 +41,7 @@ def login_view(request):
       return redirect('users:dash')
     else:
       messages.error(request, 'Błąd logowania..')
-      return redirect('login')
+      return redirect('users:login')
   else:
     return render(request, 'login.html')
 
