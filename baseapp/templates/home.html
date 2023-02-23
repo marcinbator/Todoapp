@@ -5,11 +5,19 @@
   <span> {{ element.title }}</span>
   <span>{{ element.content }}</span>
   {{element.date}}
-  <a href="delete/{{ element.id }}">Usun</a>
+  <a href="/delete/{{ element.id }}">Usun</a>
+  <a href="/edit/{{ element.id }}">Edytuj</a>
+   {% if element.done %}
+  Gotowe
+  <a href="/switch/{{ element.id }}">Oznacz jako nieukończone</a>
+  {% else %}
+  Do zrobienia
+  <a href="/switch/{{ element.id }}">Oznacz jako ukończone</a>
+  {% endif %}
 </div>
 {% endfor %} {% if user.is_authenticated %}
-<a href="dodaj/">Dodaj</a>
-<a href="/users">Konto</a>
+<a href="/add/">Dodaj</a>
+<a href="/users/">Konto</a>
 {% else %}
 <p>Aby dodać elementy, <a href="{% url 'users:login' %}">zaloguj się</a>.</p>
 {% endif %}

@@ -22,7 +22,7 @@ def dodaj(request):
     form = addElement()
     if request.method == 'POST':
         form = addElement(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             element = form.save(commit=False)
             element.author = request.user
             form.save()
@@ -37,3 +37,31 @@ def dodaj(request):
 def usun(request, id):
     Element.objects.get(id=id).delete()
     return HttpResponseRedirect(reverse('home'))
+
+
+@login_required
+def edytuj(request, id):
+    element = Element.objects.get(id=id)
+    if request.method == 'POST':
+        form = addElement(request.POST, instance=element)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = addElement(instance=element)
+    context = {
+        'form': form
+    }
+    return render(request, 'addElement.html', context)
+
+
+@login_required
+def switchDone(request, id):
+    element = Element.objects.get(id=id)
+    element.done = not element.done
+    element.save()
+    elements = Element.objects.all()
+    context = {
+        'elements': elements
+    }
+    return render(request, 'home.html', context)
