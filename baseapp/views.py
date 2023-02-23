@@ -64,4 +64,4 @@ def switchDone(request, id):
     context = {
         'elements': elements
     }
-    return render(request, 'home.html', context)
+    return redirect('home')
