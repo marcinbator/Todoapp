@@ -25,8 +25,6 @@ SECRET_KEY = 'django-insecure-39#tzxy2t=di4lab563g8&ic%ziivnjjendi0&)3%xq5vffmgv
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "*",
-    'cb1a0754-b29b-4fef-a985-935aff18927d.id.repl.co',
 ]
 
 # Application definition
@@ -86,6 +84,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
+
     {
         'NAME':
         'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -129,4 +128,5 @@ CSRF_COOKIE_SECURE = False
 
 CSRF_COOKIE_HTTPONLY = False
 
-SESSION_COOKIE_SECURE = False
+
+
