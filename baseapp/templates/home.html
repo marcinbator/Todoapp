@@ -1,27 +1,36 @@
-{% extends 'base.html' %} {% block content %} {% for element in elements %}
-<!--prettierignore-->
-<div>
-  {{ element.id }}
-  <span> {{ element.title }}</span>
-  <span>{{ element.content }}</span>
-  {{element.date}}
-  <a href="/delete/{{ element.id }}">Usun</a>
-  <a href="/edit/{{ element.id }}">Edytuj</a>
-   {% if element.done %}
-  Gotowe
-  <a href="/switch/{{ element.id }}">Oznacz jako nieukończone</a>
+{% extends 'base.html' %} 
+{% block content %} 
+  <div class='elements'>
+    {% for element in elements %}
+      <div class="element">
+        <h3> {{ element.title }}</h3>
+        <span>{{ element.content }}</span>
+        <span class='date'>{{element.date}}</span>
+        {% if element.done %}
+          <span style="color: green">Gotowe</span>
+        {% else %}
+          <span style="color: darkred">Do zrobienia</span> 
+        {% endif %}
+        <div class='elem-menu'>
+        <a class='delete-button' href="/delete/{{ element.id }}"><i class="fa-solid fa-xmark"></i></a>
+        {% if element.done %}
+          <a href="/switch/{{ element.id }}">Oznacz jako nieukończone |</a>
+        {% else %}
+          <a href="/switch/{{ element.id }}">Oznacz jako ukończone |</a>
+        {% endif %}
+        <a href="/edit/{{ element.id }}">Edytuj</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% if user.is_authenticated %}
+    <a href="/add/">Dodaj</a>
   {% else %}
-  Do zrobienia
-  <a href="/switch/{{ element.id }}">Oznacz jako ukończone</a>
+    <p>Aby dodać elementy, <a href="{% url 'users:login' %}">zaloguj się</a>.</p>
   {% endif %}
-</div>
-{% endfor %} {% if user.is_authenticated %}
-<a href="/add/">Dodaj</a>
-<a href="/users/">Konto</a>
-{% else %}
-<p>Aby dodać elementy, <a href="{% url 'users:login' %}">zaloguj się</a>.</p>
-{% endif %}
-<!--prettierignore-->
-{% if messages %} {% for message in messages %} {{message}} {% endfor %}
-<!--prettierignore-->
-{% endif %} {% endblock %}
+  {% if messages %} 
+    {% for message in messages %} 
+      {{message}} 
+    {% endfor %}
+  {% endif %} 
+{% endblock %}
