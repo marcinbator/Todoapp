@@ -1,13 +1,15 @@
-{% extends 'base.html' %} {% block content %}
-<div>
-  Siemano, {% if user.is_authenticated %} {{ user }} {% else %} durniu
-  niezalogowany. {% endif %} {% if user.is_authenticated %}
-  <a href="logout/">Wyloguj</a>
-  {% else %}
-  <a href="login/">Zaloguj się</a>
-  <a href="register">Utwórz konto</a>
-
-  {% endif %}
-  <a href="{% url 'home' %}">Strona główna</a>
-</div>
+{% extends 'base.html' %} 
+{% block content %}
+  <div class='dashboard'>
+    <h1>Cześć, {{user.username}}.</h1>
+    {% if counted > 0 %}
+      <h4>Dodałeś już {{ counted }} elementów!</h4>
+    {% else %}
+      <h4>Nie dodałeś jeszcze żadnych elementów.</h4>
+    {% endif %}
+    <div class='user-buttons'>
+      <a class='small-button' href="{% url 'home' %}">Twoje elementy</a>
+      <a class='small-button' href="logout/">Wyloguj</a>
+    </div>
+  </div>
 {% endblock %}

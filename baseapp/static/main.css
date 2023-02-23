@@ -38,7 +38,6 @@ i {
 }
 .nav,
 .footer {
-  width: 100vw;
   background: var(--gray);
   color: var(--white);
   padding: 10px;
@@ -54,12 +53,11 @@ i {
   left: 0;
 }
 .body {
-  min-height: 75vh;
+  min-height: 83vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 50px 0;
 }
 .elements {
   display: flex;
@@ -137,6 +135,9 @@ i {
   border-radius: 10px;
   z-index: 10;
 }
+.elem-add i {
+  font-size: 30px;
+}
 .delete-button:hover .popup,
 .elem-edit:hover .popup,
 .elem-undo:hover .popup,
@@ -156,7 +157,6 @@ i {
 }
 .menu {
   background: rgb(151, 156, 151);
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,4 +178,39 @@ i {
 }
 .menu-element:hover {
   background: var(--red);
+}
+.button {
+  background: var(--white);
+  padding: 10px 20px;
+  font-weight: bolder;
+  border-radius: 10px;
+  border: 3px solid var(--red);
+  color: var(--black);
+  min-width: 10vw;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+  font-size: large;
+}
+.button:hover {
+  color: var(--black);
+  transform: scale(1.05);
+}
+@media (max-width: 800px) {
+  i {
+    font-size: large;
+  }
+  .element {
+    width: 90vw;
+  }
+  .date {
+    font-size: x-small;
+  }
+  .elem-title {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .elem-text {
+    font-size: small;
+  }
 }

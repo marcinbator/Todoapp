@@ -1,10 +1,13 @@
-{% for message in messages %} {{message}} {% endfor %}
-<form method="POST" action="">
-  <!--prettierignore-->
-  {% for field in form %} {% csrf_token %}{{field}} {{field.label}}
-  <!--prettierignore-->
-
-  {% endfor%}
-  <input type="submit" />
-</form>
-<a href="{% url 'home' %}">Strona główna</a>
+{% extends 'base.html' %} {% block content %}
+  <div class='login'>
+    <form class='form' method="POST" action="">
+      {% for field in form %} 
+        {% csrf_token %}
+        {{field.label}}
+        {{field}} 
+      {% endfor%}
+      <input class='submit' type="submit" />
+    </form>
+    <a href="{% url 'users:login' %}">Zaloguj się</a>
+  </div>
+{% endblock %}

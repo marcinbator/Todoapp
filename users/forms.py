@@ -7,3 +7,8 @@ class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
+        labels = {
+            'password1': 'Hasło (min. 8 znaków, cyfry i litery)',
+            'username': 'Nazwa',
+            'email': 'Adres e-mail',
+        }

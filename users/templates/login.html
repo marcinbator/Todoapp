@@ -1,12 +1,12 @@
 {% extends 'base.html' %} {% block content %}
-<div>
-  <form action="" method="POST">
-    {% csrf_token %}
-    <input type="text" name="username" />
-    <input type="password" name="password" />
-    <input type="submit" />
-  </form>
-  <a href="{% url 'home' %}">Strona główna</a>
-  <a href="{% url 'users:register' %}">Zarejestruj się </a>
-</div>
+  <div class='login'>
+    <h1>Zaloguj się</h1>
+    <form class='form' action="" method="POST">
+      {% csrf_token %}
+      <input class='input' type="text" name="username" />
+      <input class='input' type="password" name="password" />
+      <input class='submit' type="submit" />
+    </form>
+    <a href="{% url 'users:register' %}">Utwórz konto</a>
+  </div>
 {% endblock %}

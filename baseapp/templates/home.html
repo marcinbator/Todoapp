@@ -1,182 +1,171 @@
 {% extends 'base.html' %} 
-{% block content %} 
-{% if user.is_authenticated %}
-  <h1>Twoje elementy:</h1>
-  <div class='elements'>
-    {% for element in elements %}
-      <div class="element"
-        style='{% if element.done %} opacity: 0.3; %}{% endif %}'
-      >
-        <a class='delete-button' href="/delete/{{ element.id }}">
-          <i class="fa-solid fa-xmark"></i>
-          <p class='popup'>Usuń element</p>
-        </a>
-        <div class="elem-content">
-          <h3 class='elem-title'> 
-            {{ element.title }}
-            <span class='date'>
-              {{element.date}}
-            </span>
-          </h3>
-          <span class=elem-text>{{ element.content }}</span>
-          
-        </div>
-        <div class='elem-menu'>
-          <div class='elem-status'>
-            {% if element.done %}
-              <a class='elem-undo' href="/switch/{{ element.id }}">
-                <i class="fa-solid fa-check-double"></i>
-                <p class='popup'>Cofnij wykonanie</p>
-              </a>
-            {% else %}
-              <a class='elem-do' href="/switch/{{ element.id }}">
-                <i class="fa-solid fa-check"></i>
-                <p class='popup'>Oznacz jako ukończone</p>
-              </a>
-            {% endif %}
-          </div>
-          <a class='elem-edit' href="/edit/{{ element.id }}">
-            <i class="fa-sharp fa-solid fa-pen-to-square"></i>
-            <p class='popup'>Edytuj</p>
+{% block content %}
+  {% if user.is_authenticated %}
+    <div class='elements'>
+      {% for element in elements %}
+        <div class="element"
+          style='{% if element.done %} opacity: 0.3; %}{% endif %}'
+        >
+          <a class='delete-button' href="/delete/{{ element.id }}">
+            <i class="fa-solid fa-xmark"></i>
+            <p class='popup'>Usuń element</p>
           </a>
+          <div class="elem-content">
+            <h3 class='elem-title'> 
+              {{ element.title }}
+              <span class='date'>
+                {{element.date}}
+              </span>
+            </h3>
+            <span class=elem-text>{{ element.content }}</span>
+            
+          </div>
+          <div class='elem-menu'>
+            <div class='elem-status'>
+              {% if element.done %}
+                <a class='elem-undo' href="/switch/{{ element.id }}">
+                  <i class="fa-solid fa-check-double"></i>
+                  <p class='popup'>Cofnij wykonanie</p>
+                </a>
+              {% else %}
+                <a class='elem-do' href="/switch/{{ element.id }}">
+                  <i class="fa-solid fa-check"></i>
+                  <p class='popup'>Oznacz jako ukończone</p>
+                </a>
+              {% endif %}
+            </div>
+            <a class='elem-edit' href="/edit/{{ element.id }}">
+              <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+              <p class='popup'>Edytuj</p>
+            </a>
+          </div>
         </div>
-      </div>
-    {% endfor %}
-  </div>
+      {% endfor %}
+    </div>
     <a class='elem-add' href="/add/">
-      <i class="fa-solid fa-plus"></i>
+       <i class="fa-solid fa-plus"></i>
       <p class='popup'>Dodaj element</p>
     </a>
-{% else %}
-    <h1>Witaj w aplikacji TODOApp.</h1>
-    <div class='elements'>
-      <div class="element">
-        <div class='delete-button' href="">
-          <i class="fa-solid fa-xmark"></i>
-          <p class='popup'>Usuń element</p>
-        </div>
-        <div class="elem-content">
-          <h3 class='elem-title'> 
-            Zrobić zakupy
-            <span class='date'>
-              15 marca 2023, 13:58
+  {% else %}
+      <div class='elements'>
+        <h1>Witaj w aplikacji TODOApp.</h1>
+        <div class="element">
+          <div class='delete-button' href="">
+            <i class="fa-solid fa-xmark"></i>
+            <p class='popup'>Usuń element</p>
+          </div>
+          <div class="elem-content">
+            <h3 class='elem-title'> 
+              Zrobić zakupy
+              <span class='date'>
+                15 marca 2023, 13:58
+              </span>
+            </h3>
+            <span class=elem-text>
+              Jajka 4, mąka, cukier 1kg, chleb x2
             </span>
-          </h3>
-          <span class=elem-text>
-            Jajka 4, mąka, cukier 1kg, chleb x2
-          </span>
-        </div>
-        <div class='elem-menu'>
-          <div class='elem-status'>
-              <div class='elem-do' href="">
-                <i class="fa-solid fa-check"></i>
-                <p class='popup'>Oznacz jako ukończone</p>
-              </div>
           </div>
-          <div class='elem-edit' href="">
-            <i class="fa-sharp fa-solid fa-pen-to-square"></i>
-            <p class='popup'>Edytuj</p>
+          <div class='elem-menu'>
+            <div class='elem-status'>
+                <div class='elem-do' href="">
+                  <i class="fa-solid fa-check"></i>
+                  <p class='popup'>Oznacz jako ukończone</p>
+                </div>
+            </div>
+            <div class='elem-edit' href="">
+              <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+              <p class='popup'>Edytuj</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="element" style=' opacity: 0.3;'>
-        <div class='delete-button' href="">
-          <i class="fa-solid fa-xmark"></i>
-          <p class='popup'>Usuń element</p>
-        </div>
-        <div class="elem-content">
-          <h3 class='elem-title'> 
-            Wyprowadzić psa
-            <span class='date'>
-              13 marca 2023, 11:58
+        <div class="element" style=' opacity: 0.3;'>
+          <div class='delete-button' href="">
+            <i class="fa-solid fa-xmark"></i>
+            <p class='popup'>Usuń element</p>
+          </div>
+          <div class="elem-content">
+            <h3 class='elem-title'> 
+              Wyprowadzić psa
+              <span class='date'>
+                13 marca 2023, 11:58
+              </span>
+            </h3>
+            <span class=elem-text>
+              Wyprowadzić psa o 7 rano na spacer
             </span>
-          </h3>
-          <span class=elem-text>
-            Wyprowadzić psa o 7 rano na spacer
-          </span>
-        </div>
-        <div class='elem-menu'>
-          <div class='elem-status'>
-              <div class='elem-undo' href="">
-                <i class="fa-solid fa-check-double"></i>
-                <p class='popup'>Cofnij wykonanie</p>
-              </div>
           </div>
-          <div class='elem-edit' href="">
-            <i class="fa-sharp fa-solid fa-pen-to-square"></i>
-            <p class='popup'>Edytuj</p>
+          <div class='elem-menu'>
+            <div class='elem-status'>
+                <div class='elem-undo' href="">
+                  <i class="fa-solid fa-check-double"></i>
+                  <p class='popup'>Cofnij wykonanie</p>
+                </div>
+            </div>
+            <div class='elem-edit' href="">
+              <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+              <p class='popup'>Edytuj</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="element">
-        <div class='delete-button' href="">
-          <i class="fa-solid fa-xmark"></i>
-          <p class='popup'>Usuń element</p>
-        </div>
-        <div class="elem-content">
-          <h3 class='elem-title'> 
-            Sprawdzian matma
-            <span class='date'>
-              18 marca 2023, 11:24
+        <div class="element">
+          <div class='delete-button' href="">
+            <i class="fa-solid fa-xmark"></i>
+            <p class='popup'>Usuń element</p>
+          </div>
+          <div class="elem-content">
+            <h3 class='elem-title'> 
+              Sprawdzian matma
+              <span class='date'>
+                18 marca 2023, 11:24
+              </span>
+            </h3>
+            <span class=elem-text>
+              Całki, zespolone, macierze
             </span>
-          </h3>
-          <span class=elem-text>
-            Całki, zespolone, macierze
-          </span>
-        </div>
-        <div class='elem-menu'>
-          <div class='elem-status'>
-              <div class='elem-do' href="">
-                <i class="fa-solid fa-check"></i>
-                <p class='popup'>Oznacz jako ukończone</p>
-              </div>
           </div>
-          <div class='elem-edit' href="">
-            <i class="fa-sharp fa-solid fa-pen-to-square"></i>
-            <p class='popup'>Edytuj</p>
+          <div class='elem-menu'>
+            <div class='elem-status'>
+                <div class='elem-do' href="">
+                  <i class="fa-solid fa-check"></i>
+                  <p class='popup'>Oznacz jako ukończone</p>
+                </div>
+            </div>
+            <div class='elem-edit' href="">
+              <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+              <p class='popup'>Edytuj</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="element">
-        <div class='delete-button' href="">
-          <i class="fa-solid fa-xmark"></i>
-          <p class='popup'>Usuń element</p>
-        </div>
-        <div class="elem-content">
-          <h3 class='elem-title'> 
-            Korki z chemii
-            <span class='date'>
-              22 marca 2023, 15:24
+        <div class="element">
+          <div class='delete-button' href="">
+            <i class="fa-solid fa-xmark"></i>
+            <p class='popup'>Usuń element</p>
+          </div>
+          <div class="elem-content">
+            <h3 class='elem-title'> 
+              Korki z chemii
+              <span class='date'>
+                22 marca 2023, 15:24
+              </span>
+            </h3>
+            <span class=elem-text>
+              https://microsoft.teams.com/meeting003
             </span>
-          </h3>
-          <span class=elem-text>
-            https://microsoft.teams.com/meeting003
-          </span>
-        </div>
-        <div class='elem-menu'>
-          <div class='elem-status'>
-              <div class='elem-do' href="">
-                <i class="fa-solid fa-check"></i>
-                <p class='popup'>Oznacz jako ukończone</p>
-              </div>
           </div>
-          <div class='elem-edit' href="">
-            <i class="fa-sharp fa-solid fa-pen-to-square"></i>
-            <p class='popup'>Edytuj</p>
+          <div class='elem-menu'>
+            <div class='elem-status'>
+                <div class='elem-do' href="">
+                  <i class="fa-solid fa-check"></i>
+                  <p class='popup'>Oznacz jako ukończone</p>
+                </div>
+            </div>
+            <div class='elem-edit' href="">
+              <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+              <p class='popup'>Edytuj</p>
+            </div>
           </div>
         </div>
+        <a class='button' href="{% url 'users:login' %}">ZALOGUJ</a>
       </div>
-    </div>
-    <p>Aby dodać elementy, 
-      <a href="{% url 'users:login' %}">
-        zaloguj się
-      </a>
-      .
-    </p>
-{% endif %}
-  {% if messages %} 
-    {% for message in messages %} 
-      {{message}} 
-    {% endfor %}
-  {% endif %} 
+  {% endif %}
 {% endblock %}
