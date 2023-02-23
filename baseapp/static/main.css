@@ -54,12 +54,12 @@ i {
   left: 0;
 }
 .body {
-  min-height: 60vh;
+  min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 100px 0;
+  margin: 50px 0;
 }
 .elements {
   display: flex;
@@ -127,7 +127,6 @@ i {
   display: flex;
   align-items: center;
 }
-
 .popup {
   position: absolute;
   top: 50px;
