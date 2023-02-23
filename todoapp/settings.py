@@ -25,8 +25,13 @@ SECRET_KEY = 'django-insecure-39#tzxy2t=di4lab563g8&ic%ziivnjjendi0&)3%xq5vffmgv
 DEBUG = True
 
 ALLOWED_HOSTS = [
+<<<<<<< HEAD
   "*",
   'cb1a0754-b29b-4fef-a985-935aff18927d.id.repl.co',
+=======
+    "*",
+    'cb1a0754-b29b-4fef-a985-935aff18927d.id.repl.co',
+>>>>>>> parent of 3729a669 (g)
 ]
 
 # Application definition
@@ -86,6 +91,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
+<<<<<<< HEAD
   {
     'NAME':
     'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -99,6 +105,18 @@ AUTH_PASSWORD_VALIDATORS = [
   {
     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
   },
+=======
+    {
+        'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+>>>>>>> parent of 3729a669 (g)
 ]
 
 # Internationalization
@@ -134,6 +152,7 @@ CSRF_COOKIE_HTTPONLY = False
 
 <<<<<<< HEAD
 SESSION_COOKIE_SECURE = False
+<<<<<<< HEAD
 =======
 SESSION_COOKIE_SECURE = False
 
@@ -150,3 +169,5 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 >>>>>>> parent of 7d2267da (d)
+=======
+>>>>>>> parent of 3729a669 (g)
