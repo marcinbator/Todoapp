@@ -1,7 +1,7 @@
 # Todoapp
 
-## Prosta aplikacja służąca do obsługi notatek
+## Simple todoapp in MVC architecture
 
-> Wersja demonstracyjna projektu: [https://todoapp.marcinbator.repl.co/](https://d7e7177d-d4ce-409b-b04a-04a8a5cc69d4-00-1qe6wdelyxe6.picard.replit.dev/)
+> Demo version: [https://todoapp.marcinbator.repl.co/](https://d7e7177d-d4ce-409b-b04a-04a8a5cc69d4-00-1qe6wdelyxe6.picard.replit.dev/)
 
-Aplikacja pozwala na dodawanie, edycję, usuwanie i odznaczanie krótkich notatek. Obsługuje również rejestrację i logowanie użytkowników. Została wykonana przy użyciu frameworka Django.
+App's main purpose was learning basic web applications workflow such as session-stored authentication and HTTP requests.
